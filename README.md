@@ -142,24 +142,21 @@ Al final del curso, en los días **7,12 y 14 de Mayo, 2015** tendrás que mostra
 
 ### Virtualización
 
-Los alumnos usan diferentes sistemas operativos(Microsoft Windows, Mac OS y GNU/Linux), para tener un ambiente unificado se decidió utilizar un ambiente virtualizado, (Docker)[http://www.docker.com] para tal propósito.
+Los alumnos usan diferentes sistemas operativos(Microsoft Windows, Mac OS y GNU/Linux), para tener un ambiente unificado se decidió utilizar un ambiente virtualizado, [Docker](http://www.docker.com) para tal propósito.
 
-El contenedor que se les proveyó (nanounanue/itam-mate-computacional) tiene instalado todos los paquetes, lenguajes y herramientas utilizadas en clase, minimizando así los tiempos de instalación y problemáticas de un ambiente heterogéneo.
+El contenedor que se les proveerá `nanounanue/ds` tiene instalado todos los paquetes, lenguajes y herramientas utilizadas en clase, minimizando así los tiempos de instalación y problemáticas de un ambiente heterogéneo.
 
 ### Control de versiones
 
-La herramienta de versionado utilizado fué git (http://git-scm.com) y como repositorio central de la clase nanounanue/itam-mate-computacional, se encuentra en Github (http://www.github.com).
+La herramienta de versionado que se utilizará será [git](http://git-scm.com) y como repositorio central de la clase `ITAM-DS/mate-computacional`, se encuentra en [Github](http://www.github.com).
 
-Los alumnos forkeaban el repositorio central y hacían flujos completos de integración de sus códigos y tareas al repositorio central para ser evaluados.
-
-Todas las tareas y proyectos se entregaban por este medio.
+Todas las tareas y proyectos se entregarán por este medio.
 
 ### Lenguajes de programación
 
-El principal lenguaje de programación visto en clase fué Python (http://www.python.org), esta elección se dió por su reciente popularidad en la comunidad de cómputo científico (como se atestigua en diversos cursos presenciales y remotos alrededor del mundo, libros y otra literatura científica, así como sus crecientes bibliotecas de cómputo científico, estadístico, etc.), el hecho de que es un lenguaje general de programación, la estructura del lenguaje promueve que se codifique limpiamente y a sus conexiones con diferentes lenguajes (C/C++, Octave, R, Java, etc.) -- aunque esto último no se revisó en la clase.
+El principal lenguaje de programación será  [Python](http://www.python.org), esta elección se dió por su reciente popularidad en la comunidad de cómputo científico (como se atestigua en diversos cursos presenciales y remotos alrededor del mundo, libros y otra literatura científica, así como sus crecientes bibliotecas de cómputo científico, estadístico, etc.), el hecho de que es un lenguaje general de programación, la estructura del lenguaje promueve que se codifique limpiamente y a sus conexiones con diferentes lenguajes (C/C++, Octave, R, Java, etc.) -- aunque esto último no se revisó en la clase.
 
-Además de Python, se dedicaron 2 clases a ver GNU/Octave y otra más a ver el lenguaje estadístico R.
-
+Además de Python, se dedicarán 2 clases a ver `GNU/Octave` y otra más a ver el lenguaje estadístico `R`.
 
 
 ## Aclaraciones
