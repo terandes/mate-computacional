@@ -65,6 +65,9 @@ Usa los `issues` de Github, lo veremos más adelante.
 - Practicar es la única manera de volverse bueno en esto. Lo más probable es que pases de 8 a 12 horas por semana (además del tiempo de la clase) escribiendo y *debugeando* código.
 - Si tienes problemas con la tarea, ven a mi oficina, o busca ayuda de tus compañeros. **NO** esperes a que sea demasiado tarde para tomar tu destino en tus manos.
 
+## ¿Cómo puedo ver los Notebook?
+
+[**Aquí**](http://nbviewer.ipython.org/github/ITAM-DS/mate-computacional/tree/master/)
 
 ### Evaluación
 
