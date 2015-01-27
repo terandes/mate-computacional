@@ -282,8 +282,7 @@ Vamos a agregar como `remote` el repositorio
 `ITAM-DS/mate-computacional`:
 
 ```
-➜ git remote add repo-clase
-https://github.com/ITAM-DS/mate-computacional.git
+➜ git remote add repo-clase https://github.com/ITAM-DS/mate-computacional.git
 ```
 
 Ejecuta de nuevo `git remote -v`
