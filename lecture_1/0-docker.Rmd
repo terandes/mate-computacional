@@ -145,6 +145,9 @@ Creen un contenedor:
 docker run -d -p 8787:8787 -p 8888:8888 -v path_a_carpeta:/home/itam/proyectos nanounanue/docker-ds
 ```
 
+El `path_a_carpeta` se refiere a la salida del comando `pwd` en tu carpeta donde guardes tus proyectos (recomendado: `proyectos`).
+En MS Windows regularmente es algo como `/c/Users/<Mi nombre de usuario en mi compu>/proyectos` y en MacOS es `/Users/<Minombre de usuario/proyectos`.
+
 Podemos probar que está ejecutándose `RStudio`:
 
 Abran en el navegador la página `http://0.0.0.0:8787` (Si estás en GNU/Linux) o `http://92.168.59.103:8787` (quizá sea esta, verifica el paso del `boot2docker ip`), deberían de ver la entrada de RStudio.
@@ -190,7 +193,7 @@ docker run -it --user itam --name r-console -v path_a_carpeta:/home/itam/proyect
 Lanzar la terminal de `python` con las librerías de cómputo científico:
 
 ```
-docker run -it --user itam --name ipython-console -v path_a_carpeta:/home/itam/proyectos nanounanue/docker-ds /usr/bin/ipython
+docker run -it --user itam --name ipython-console -v path_a_carpeta:/home/itam/proyectos nanounanue/docker-ds ipython
 ```
 
 O un shell simple (en este caso `zsh`)
