@@ -150,7 +150,7 @@ En MS Windows regularmente es algo como `/c/Users/<Mi nombre de usuario en mi co
 
 Podemos probar que está ejecutándose `RStudio`:
 
-Abran en el navegador la página `http://0.0.0.0:8787` (Si estás en GNU/Linux) o `http://92.168.59.103:8787` (quizá sea esta, verifica el paso del `boot2docker ip`), deberían de ver la entrada de RStudio.
+Abran en el navegador la página `http://0.0.0.0:8787` (Si estás en GNU/Linux) o `http://192.168.59.103:8787` (quizá sea esta, verifica el paso del `boot2docker ip`), deberían de ver la entrada de RStudio.
 
 
 Las credenciales son:
