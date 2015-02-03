@@ -1,4 +1,4 @@
-
+﻿
 /**
  *
  * @author Javier
@@ -6,7 +6,7 @@
 import static java.lang.Math.sqrt;
 import java.util.LinkedList;
 
-public class Tarea {
+public class Euler1 {
 
     public static long problema1(long n) {
 	long a = (n - 1) / 3;
