@@ -99,7 +99,7 @@
 
 <p>Si no lo has hecho antes, si ya la habías creado, utiliza</p>
 
-<pre class = 'prettyprint lang-r'>docker -ai start octave-console</pre>
+<pre class = 'prettyprint lang-r'>docker start -ai octave-console</pre>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>GNU / Octave</h2></hgroup><article  id="gnu-octave">
 
@@ -289,7 +289,126 @@ a.^I</pre>
 <li><code>rand(m,n)</code> y <code>randn(m,n)</code> regresan matrices cuyos elementos son seleccionados al azar (de una densidad uniforme o normal).</li>
 <li><code>diag(A)</code> Regresa la diagonal de la matriz \(A\).</li>
 <li><code>diag(x)</code> Regresa una matriz cuadrada cuya diagonal es el vector \(x\).</li>
-</ul></article></slide>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Ejercicio 1</h2></hgroup><article  id="ejercicio-1">
+
+<p>Sea \(\vec{a} = [0, -1, 2, 4, -2, 1, 5, 3]\) y \(\vec{b} = [5, 2, 1, 6, 3, 8, 4, 7]\). Determine que hacen las siguientes operaciones:</p>
+
+<pre >x = a&#39;
+A = x*x&#39;
+S = x&#39;*x
+W = x*b
+length(x)
+length(a)
+size(A)
+size(x)
+size(a)
+size(S)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Ejercicio 2</h2></hgroup><article  id="ejercicio-2">
+
+<ul>
+<li>¿Qué hace lo siguiente?</li>
+</ul>
+
+<pre >n = 101
+x = linspace(0,1,n)</pre>
+
+<ul>
+<li>Determina la salida del siguiente código</li>
+</ul>
+
+<pre >x = 1:10
+y = 1:2:11
+z = 5:-2:-3</pre>
+
+<ul>
+<li>Usando los vectores \(\vec{a}\) y \(\vec{b}\) ¿Cuál es la salida de lo siguiente?</li>
+</ul>
+
+<pre >a(2:5)
+a(b)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Ejercicio 3</h2></hgroup><article  id="ejercicio-3">
+
+<p>¿Cuál es el espacio entre los puntos?</p>
+
+<pre >x = linspace(1, 1000, 5)
+y = logspace(0,3,5)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Gráficas</h2></hgroup><article  id="graficas">
+
+<p>Queremos graficar la función \(y = x^2 - \sqrt{x+5} + \sin 5x\) en el intervalo \(-1 \leq x \leq 6\).</p>
+
+<p>La idea es crear varios puntos \((x_i, y_i)\) y luego unirlos con líneas.</p>
+
+<pre >n = 100
+x = linspace(-1, 6, n)
+y = zeros(1, n)
+for i = 1:n
+  y(i) = x(i)^2 - sqrt(x(i) + 5) + sin(5*x(i));
+end
+plot(x,y)</pre>
+
+<p>Esto lo mostrará en la consola&#8230;</p>
+
+</article></slide><slide class=''><hgroup><h2>Gráficas</h2></hgroup><article  id="graficas-1">
+
+<p>Es muy triste usar un <code>for</code> para una operación así, recordando los operadores de elemento, podemos reescribirlo como sigue:</p>
+
+<pre >n = 100;
+y = zeros(1,n);
+x = linspace(-1, 6, n);
+
+y = x.^2 - sqrt(x+5) + sin(5*x);
+
+plot(x,y)</pre>
+
+<p>Siempre que puedas usa operaciones <em>vectorizadas</em> son más eficientes.</p>
+
+</article></slide><slide class=''><hgroup><h2>Gráficas</h2></hgroup><article  id="graficas-2">
+
+<p>¿Cómo hacerle para guardar la imagen?</p>
+
+<p><strong>NOTA</strong>: <code>octave</code> soporta los comandos del SO directo ( a diferencia de <code>ipython</code> que requiere <code>!</code>)</p>
+
+<ol>
+<li>Navega a tu carpeta de alumnos y crea una carpeta <code>graficas</code>.</li>
+</ol>
+
+<pre >print(&#39;grafica-test&#39;, &quot;-dpng&quot;)  # Para guardarla como PNG
+print(&#39;grafica-test&#39;, &quot;-deps&quot;)  # Para guardarla como EPS</pre>
+
+</article></slide><slide class=''><hgroup><h2>Ejercicio</h2></hgroup><article  id="ejercicio">
+
+<p>Los 2 primeros <a href='http://en.wikipedia.org/wiki/Hermite_polynomials' title=''>polinomios de Hermite</a> son</p>
+
+<p>\[
+H_1(x) = 1 \\
+H_2(x) = 2x
+\]</p>
+
+<p>Los podemos graficar usando <code>subplot</code> en un rango de $ -2 x 3$</p>
+
+<pre >...  # Aquí falta código -&gt; x, H1, H2, H3, H4
+subplot(2,2,1), plot(x,H1)
+subplot(2,2,2), plot(x,H2)
+... # Aquí falta más código</pre>
+
+<p>Grafica en subgráficas los primeros 4 polinomios de Hermite. ¿Cómo interpretas los argumentos de <code>subplot</code>? Guarda la gráfica en <code>graficas</code> con el nombre <code>hermite</code> en formato <code>eps</code> y <code>png</code>.</p>
+
+</article></slide><slide class=''><hgroup><h2>Ejercicio</h2></hgroup><article  id="ejercicio-4">
+
+<p>Para guardar todo en una gráfica usa el comando <code>hold on</code></p>
+
+<pre >subṕlot(1,1,1)
+plot(x, H1, &#39;b&#39;)  # La `b` es el color negro
+hold on
+plot(x, H2, &#39;r&#39;)
+... # Aquí falta código</pre>
+
+<p>Guarda la gráfica como <code>hermite2</code> en ambos formatos.</p></article></slide>
 
 
   <slide class="backdrop"></slide>
