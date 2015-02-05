@@ -123,7 +123,7 @@
 <li>Los vectores simplemente son una subclase de las matrices.</li>
 </ul>
 
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Vectores</h2></hgroup><article  id="vectores">
+</article></slide><slide class=''><hgroup><h2>Vectores</h2></hgroup><article  id="vectores">
 
 <p>Los vectores-fila:</p>
 
@@ -389,7 +389,7 @@ H_1(x) = 1 \\
 H_2(x) = 2x
 \]</p>
 
-<p>Los podemos graficar usando <code>subplot</code> en un rango de $ -2 x 3$</p>
+<p>Los podemos graficar usando <code>subplot</code> en un rango de \(-2 \leq x \leq 3\)</p>
 
 <pre >...  # Aquí falta código -&gt; x, H1, H2, H3, H4
 subplot(2,2,1), plot(x,H1)
@@ -402,7 +402,7 @@ subplot(2,2,2), plot(x,H2)
 
 <p>Para guardar todo en una gráfica usa el comando <code>hold on</code></p>
 
-<pre >subṕlot(1,1,1)
+<pre >subplot(1,1,1)
 plot(x, H1, &#39;b&#39;)  # La `b` es el color negro
 hold on
 plot(x, H2, &#39;r&#39;)
