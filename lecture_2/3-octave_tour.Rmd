@@ -20,7 +20,7 @@ docker run -ti --user itam --name octave-console \
 Si no lo has hecho antes, si ya la habías creado, utiliza
 
 ```{r, eval=FALSE}
-docker -ai start octave-console
+docker start -ai octave-console
 ```
 
 
