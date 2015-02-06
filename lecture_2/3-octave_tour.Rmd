@@ -44,7 +44,7 @@ docker start -ai octave-console
 - Los principales objetos en `octave` son las matrices. 
   - Los vectores simplemente son una subclase de las matrices.
 
-# Vectores
+## Vectores
 
 Los vectores-fila:
 
@@ -364,7 +364,7 @@ H_1(x) = 1 \\
 H_2(x) = 2x
 $$
 
-Los podemos graficar usando `subplot` en un rango de $ -2 \leq x \leq 3$
+Los podemos graficar usando `subplot` en un rango de $-2 \leq x \leq 3$
 
 ```
 ...  # Aquí falta código -> x, H1, H2, H3, H4
