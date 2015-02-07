@@ -1,5 +1,7 @@
 **/.ipynb_checkpoints/*
 **/*.out
+**/.Rhistory
+**/.RData
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
