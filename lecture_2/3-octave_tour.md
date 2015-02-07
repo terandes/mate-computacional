@@ -11,7 +11,8 @@ Para hacer este laboratorio, necesitarás abrir la consola de octave.
 
 Usando `docker` puedes hacer:
 
-```{r, eval=FALSE}
+
+```r
 docker run -ti --user itam --name octave-console \ 
   -v /home/nano/proyectos:/home/itam/proyectos \ 
     nanounanue/docker-ds /usr/bin/octave
@@ -19,7 +20,8 @@ docker run -ti --user itam --name octave-console \
 
 Si no lo has hecho antes, si ya la habías creado, utiliza
 
-```{r, eval=FALSE}
+
+```r
 docker start -ai octave-console
 ```
 
@@ -44,21 +46,22 @@ docker start -ai octave-console
 - Los principales objetos en `octave` son las matrices. 
   - Los vectores simplemente son una subclase de las matrices.
 
-## Vectores
+# Vectores
 
 Los vectores-fila:
 
-```{r, eval=FALSE}
+
+```r
 # Vector fila
 x = [1 3 2]
-
 ```
 
 Esto crea el vector $\vec{x} = (1, 3, 2)$.
 
 También es posible usar `,` en lugar de espacios:
 
-```{r, eval=FALSE}
+
+```r
 x = [1,3,2]
 ```
 
@@ -79,13 +82,15 @@ x =
 $$
 
 
-```{r, eval=FALSE}
+
+```r
 x=[1;3;2]
 ```
 
 También de manera más gráfica se puede hacer lo siguiente:
 
-```{r, eval=FALSE}
+
+```r
 x = [1
      3
      2]
@@ -101,7 +106,8 @@ x=a:h:b
 
 Ejemplo:
 
-```{r, eval=FALSE}
+
+```r
 x=0:1:10 # Note la diferencia con las secuencia de R y de Python
 ```
 
@@ -109,17 +115,20 @@ x=0:1:10 # Note la diferencia con las secuencia de R y de Python
 
 El operador traspuesto $x^T$ se define en `octave` como `.'`:
 
-```{r, eval=FALSE}
+
+```r
 x
 ```
 
-```{r, eval=FALSE}
+
+```r
 x.'
 ```
 
 **Nota:** Si el vector $x$ es complejo, el operador `'` solito (sin el punto) traspone y conjuga el vector.
 
-```{r, eval=FALSE}
+
+```r
 x' # En este caso ya que x es real, ' hace lo mismo.
 ```
 
@@ -140,7 +149,8 @@ $$
 se obtiene con
 
 
-```{r, eval=FALSE}
+
+```r
 A = [1 3 2; 5 6 7; 8 3 1]
 ```
 
@@ -150,19 +160,22 @@ A = [1 3 2; 5 6 7; 8 3 1]
 
 Para seleccionar un elemento de la matriz $A_{ij}$, usamos 
 
-```{r, eval=FALSE}
+
+```r
 A(2,3) # i = 2, j = 3
 ```
 
 Para obtener toda la fila
 
-```{r, eval=FALSE}
+
+```r
 A(2,:)
 ```
 A esta operación en `octave` se le llama **extraer**.
 
 En el caso de la columna
-```{r, eval=FALSE}
+
+```r
 A(:,3)
 ```
 
@@ -184,7 +197,8 @@ $$
 
 ¿Qué realizan cada una de las siguientes operaciones?'
 
-```{r, eval=FALSE}
+
+```r
 B(2:3,2)
 B(2:end,3)
 B(2:4,1:end-1)
@@ -208,7 +222,8 @@ $$
 
 Las operaciones matriciales ocurren con los operadores tradicionales: `+`, `-` y `*`
 
-```{r, eval=FALSE}
+
+```r
 i + j
 k - i
 A*I
@@ -225,13 +240,15 @@ A**2
 
 ¿Qué hacen las siguientes operaciones?
 
-```{r, eval=FALSE}
+
+```r
 A.+I
 A.*A
 A./A
 ```
 
-```{r, eval=FALSE}
+
+```r
 a = 5 # Un escalar
 a./I
 a.^I
@@ -240,7 +257,8 @@ a.^I
 
 ## Subsetting Lógico
 
-```{r, eval=FALSE}
+
+```r
 (x > 0)
 (x > 0).*x
 (x > 0)*3
@@ -364,7 +382,7 @@ H_1(x) = 1 \\
 H_2(x) = 2x
 $$
 
-Los podemos graficar usando `subplot` en un rango de $-2 \leq x \leq 3$
+Los podemos graficar usando `subplot` en un rango de $ -2 \leq x \leq 3$
 
 ```
 ...  # Aquí falta código -> x, H1, H2, H3, H4
