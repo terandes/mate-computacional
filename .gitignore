@@ -57,3 +57,6 @@ docs/_build/
 target/
 .Rproj.user
 .Rhistory
+
+*.pdf
+*.tex

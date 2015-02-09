@@ -1,10 +1,26 @@
+#+TITLE: Aritmética de punto flotante: Ejemplos
 #+AUTHOR: Adolfo De Unánue Tiscareño
 #+EMAIL: adolfo.deunanue@itam.mx
 
-* Aritmética de punto flotante: Ejemplos
-En ~GNU/Octave~ los cálculos son realizados siguiendo el estándar de la **IEEE**, es decir utilizan doble precisión.
+En ~GNU/Octave~ los cálculos son realizados siguiendo el estándar de la *IEEE*, es decir utilizan doble precisión.
 Para poder ver la representación interna, le pediremos a ~octave~  que lo muestre en =hexadecimal=.
 #+begin_src octave :exports results
-format hex
-2
+  format hex;
+  x = 2;
+  ans = x
 #+end_src
+
+#+RESULTS:
+: 2
+
+
+
+#+begin_src octave :results file
+  figure(1, "visible", "off");
+  sombrero;
+  print -dpng chart.png;
+  ans = "char.png"
+#+end_src
+
+#+RESULTS:
+[[file:char.png]]
