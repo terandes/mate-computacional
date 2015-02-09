@@ -2,3 +2,9 @@
 #+EMAIL: adolfo.deunanue@itam.mx
 
 * Aritmética de punto flotante: Ejemplos
+En ~GNU/Octave~ los cálculos son realizados siguiendo el estándar de la **IEEE**, es decir utilizan doble precisión.
+Para poder ver la representación interna, le pediremos a ~octave~  que lo muestre en =hexadecimal=.
+#+begin_src octave :exports results
+format hex
+2
+#+end_src
