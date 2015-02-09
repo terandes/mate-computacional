@@ -1,0 +1,4 @@
+#+AUTHOR: Adolfo De Unánue Tiscareño
+#+EMAIL: adolfo.deunanue@itam.mx
+
+* Aritmética de punto flotante: Ejemplos
