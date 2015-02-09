@@ -4,23 +4,79 @@
 
 En ~GNU/Octave~ los cálculos son realizados siguiendo el estándar de la *IEEE*, es decir utilizan doble precisión.
 Para poder ver la representación interna, le pediremos a ~octave~  que lo muestre en =hexadecimal=.
-#+begin_src octave :exports results
+
+#+begin_src octave :session *octave* :results output :exports both
   format hex;
   x = 2;
   ans = x
 #+end_src
 
 #+RESULTS:
-: 2
+:
+: ans = 4000000000000000
 
 
 
-#+begin_src octave :results file
+#+begin_src octave :results file :exports results
   figure(1, "visible", "off");
-  sombrero;
-  print -dpng chart.png;
-  ans = "char.png"
+  x = 1:0.1:10;
+  y = cos(x);
+  plot(x,y);
+  print("chart", "-dpng");
+  ans = "chart.png";
 #+end_src
 
 #+RESULTS:
-[[file:char.png]]
+[[file:chart.png]]
+
+
+#+begin_src python :results value :exports both
+  import time
+  print("Hola, hoy es %s" % time.ctime())
+  print("Dos mas dos es")
+  return 2 + 2
+#+end_src
+
+#+RESULTS:
+: 4
+
+
+
+#+begin_src R :results both :exports both
+  ## Edit Your R Code Here.
+  x <- rnorm(100)
+  summary(x)
+#+end_src
+
+#+RESULTS:
+
+#+begin_src R  :file a.png :results graphics :exports both
+  x <- rnorm(100)
+  y <- rnorm(100)
+  plot(x, y)
+#+end_src
+
+#+RESULTS:
+[[file:a.png]]
+
+Same plot with larger dimension:
+
+#+begin_src R  :file b.png :width 800 :height 800 :results graphics :exports both
+  x <- rnorm(100)
+  y <- rnorm(100)
+  plot(x, y)
+#+end_src
+
+
+#+begin_src python :session *python* :results output :exports both
+  import time
+  print("Hola, hoy es %s" % time.ctime())
+  print("Dos mas dos es")
+  2 + 2
+#+end_src
+
+#+RESULTS:
+:
+: Hola, hoy es Mon Feb  9 01:12:45 2015
+: Dos mas dos es
+: 4
