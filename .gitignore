@@ -1,8 +1,3 @@
-**/.ipynb_checkpoints/*
-**/*.out
-**/.Rhistory
-**/.RData
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -58,8 +53,13 @@ docs/_build/
 # PyBuilder
 target/
 .Rproj.user
-.Rhistory
 
-*.pdf
-*.tex
-*.html
+**/*.pdf
+**/*.tex
+**/*.html
+
+**/.ipynb_checkpoints/*
+**/*.out
+**/.Rhistory
+**/.RData
+
