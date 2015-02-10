@@ -1,4 +1,5 @@
 **/.ipynb_checkpoints/*
+**/*.out
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -55,3 +56,8 @@ docs/_build/
 # PyBuilder
 target/
 .Rproj.user
+.Rhistory
+
+*.pdf
+*.tex
+*.html
