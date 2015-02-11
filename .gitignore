@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-**/.ipynb_checkpoints/*
-**/*.out
-
-=======
->>>>>>> 71a707be40996cd8752854ab3db72c156254e172
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
