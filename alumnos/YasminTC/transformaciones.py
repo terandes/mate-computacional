@@ -1,8 +1,9 @@
-from math import sin, cos
-def cart(r,t,f):
-    """de coordenadas esfericas a cartesianas"""
-    x=r*sin(f)*cos(t)
-    y=r*sin(f)*sin(t)
-    z=r*cos(f)
-    print x,y,z
-    return x,y,z
+def coordenadasCartesianas(x,y,z):
+    """ cambia de coordenadas cartesianas a esfericas """
+    from math import arcsin, arccos, sin
+    r=sqrt(x**2 + y**2 + z**2)
+    t=arccos(z/r)
+    f=(y/(r*sin(t)))
+    
+    print r,t,f
+    return r,t,f
