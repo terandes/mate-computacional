@@ -6,7 +6,7 @@ for k = 1:6
   axis([0, 4*pi, -1.5, 1.5])
 end
 
-print('segundaGraficaOriginal',"-deps")
+print('segundaGraficaOriginal',"-dpng")
 
 #Para cada k=1,...,6 se generará un intervalo x de 0 a 4*pi, donde x 
 #se fraccionará en 2^(k+1)+1 subintervalos. Observar que cuando k aumenta, la gráfica se define mejor.
@@ -21,7 +21,7 @@ for k = 1:6
   axis([0, 4*pi, -1.5, 1.5])
 end
 
-print('segundaGraficaSubplot',"-deps")
+print('segundaGraficaSubplot',"-dpng")
 
 #Ocurre exactamente lo mismo sólo que ahora se acomodan las 6 'áreas #gráficas' en tres renglones y dos columnas.
 
@@ -32,6 +32,6 @@ for k = 1:6
   subplot(3,2,k), plot(x, cos(3*x)-2*sin(x))
 end
 
-print('segundaGraficaAxis',"-deps")
+print('segundaGraficaAxis',"-dpng")
 
 #Las gráficas no se imprimen en un rango 'estándar' sino que el programa 'elige' en qué rango hacerlo respetando el dominio original de x.
