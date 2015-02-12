@@ -52,3 +52,14 @@ docs/_build/
 
 # PyBuilder
 target/
+.Rproj.user
+
+**/*.pdf
+**/*.tex
+**/*.html
+
+**/.ipynb_checkpoints/*
+**/*.out
+**/.Rhistory
+**/.RData
+
