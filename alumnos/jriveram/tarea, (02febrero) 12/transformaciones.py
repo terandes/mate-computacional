@@ -11,10 +11,6 @@ def convierte_esfericas_a_cartesianas(r, theta, phi):
 def convierte_cartesianas_a_esfericas(x, y, z):
     """
     función que devuelve las coordenadas esférias (r, theta, phi), a partir de coordenadas rectangulares (x, y, z)
-    :param x:
-    :param y:
-    :param z:
-    :return:
     """
     r = sqrt(x**2 + y**2 + z**2)
     theta = acos(z / r)
