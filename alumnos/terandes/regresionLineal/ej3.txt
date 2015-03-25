@@ -1,0 +1,45 @@
+lo que resulta de cada regresión lineal con los diferentes datos Y, son valores similares de la ordenada al origen y la pendiente. Pero como en el ejercicio 2 del grillo, tampoco para ninguno de los 4 casos obtuve resultado con una tolerancia de 1x10^-7, por lo que tuve que disminuirla.
+a continuación anexo los resultados:
+y1
+Out[516]: 
+array([  8.04,   6.95,   7.58,   8.81,   8.33,   9.96,   7.24,   4.26,
+        10.84,   4.82,   5.68])
+r = RegresionLineal(alpha=0.000009, max_iters=10000, tols=0.000001)
+r.gradientDescent(X, Y)
+
+La función convergió con beta: [ 0.10067506  0.78606581] en la iteración 7933
+como resultado del mejor ajuste se tiene los siguientes valores en la gráfica:
+Int: 0.09 y pen: 0.76
+Con los valores de Y (II) se tiene:
+z
+Out[517]: 
+array([ 9.14,  8.14,  8.74,  8.77,  9.26,  8.1 ,  6.13,  3.1 ,  9.13,
+        7.26,  4.74])
+r = RegresionLineal(alpha=0.00009, max_iters=10000, tols=0.00001)
+r.gradientDescent(X, Y) # valores de Y(II)
+
+La función convergió con beta: [ 0.10064218  0.78607364] en la iteración 791
+En la gráfica los valores de los coeficientes de regresión son: int: 0.09 y pen 0.76Con los valores de Y (III) se tiene:
+a
+Out[518]: 
+array([  7.46,   6.77,  12.74,   7.11,   7.81,   8.84,   6.08,   5.39,
+         8.15,   6.42,   5.73])
+r = RegresionLineal(alpha=0.00009, max_iters=10000, tols=0.00001)
+r.gradientDescent(X, Y) #con valores de Y (III)
+
+La función convergió con beta: [ 0.1006425   0.78595408] en la iteración 791
+Con los mismos valores de los coeficientes en la gráfica: int: 0.09 y pen: 0.76.
+Este es en particular un caso en que al parecer se dan valores que ajustan perfectamente a una recta excepto por el último valor de Y, el cual habría que analizarlo para saber si se puede considerar como atípico.
+Con los valores de Y (IV) se obtuvo:
+d
+Out[519]: 
+array([  6.58,   5.76,   7.71,   8.84,   8.47,   7.04,   5.25,  12.5 ,
+         5.56,   7.91,   6.89])
+r = RegresionLineal(alpha=0.00001, max_iters=10000, tols=0.00001)
+r.gradientDescent(X, Y) # valores de Y (IV)
+
+La función convergió con beta: [ 0.14001359  0.70677241] en la iteración 6982
+Para este caso se observa que no son tan similares los coeficientes de la regresión lineal con los de las otras 3 regresiones, al igual sucede con los coeficientes reportados para el mejor ajuste en la gráfica con int: 0.10 y pen: 0.68.
+En este caso tanto la gráfica obtenida como la del vínculo parecen hay un cumulo de datos distribuidos entre (5, 9) en Y, (4, 14) en X. Pero hay un dato con en X aproximadamente 4 con un valor en X de aproximadamente 13, que provoca que la pendiente ajustada a este conjunto de datos se asemeje a de los otros 3, porque sino podría tener un valor incluso menor.
+Entonces como usted nos comenta en clase profesor es bueno siempre graficar para no estar pretendiendo describir o pronosticar otros valores a partir de otros que definitivamente no se aproximan al modela de la recta.
+Ahora que con tan pocos datos tampoco es bueno (a excepción de los valores para Y (II)) pretender encontrar coeficientes para interacciones no lineales. 

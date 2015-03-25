@@ -1,0 +1,25 @@
+No me dieron los mismos valores de los coeficientes de la regresion lineal que mejor ajusta a los datos, comparados con los del vinculo señalado en la tarea. Ademas si dejaba la tolerancia de 1X10^-7 no se arrojaba ningun resultado por lo que tuve que disminuir a: 1X10^-6. Para encontrar el valor del alpha lo obtuve probando diferentes y el mejor que encontré: alpha = 0.00002.
+Despues de abrir el archivo con los datoa para poder graficar los guarde en 2 vectores:
+seconds = np.array([0.0])
+temperature = np.array([0.0])
+#i = 0
+for i in range(35, len(data1), 11):
+    j = data1[i:i+4]
+    #print j
+    h = data1[i+6:i+10]
+    seconds = numpy.insert(seconds, len(seconds), float(j))
+    temperature = numpy.insert(temperature, len(temperature), float(h))
+    i = i + 11
+seconds = seconds[1:len(seconds)]
+temperature = temperature[1:len(temperature)]
+print seconds
+print temperature 
+(el valor de i = 35 lo que encontre probando hasta llegar al valor del primer dato en segundos)
+despues renombre los vectores como X y Y
+r = RegresionLineal(alpha=0.00002, max_iters=10000, tols=0.000001)
+r.gradientDescent(X, Y)
+
+La función convergió con beta: [ 0.29316037  4.75835736] en la iteración 1965
+ ultima_iteracion = (r.breaking_iteration - 1) if r.breaking_iteration else (r.max_iters - 1)
+
+interact(plotModelo, x=fixed(X), y=fixed(Y), rl=fixed(r), iteracion=(0,ultima_iteracion,10)); 
