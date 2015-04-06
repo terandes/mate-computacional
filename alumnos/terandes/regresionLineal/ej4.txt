@@ -1,0 +1,34 @@
+los datos tienen la forma de -logaritmo o de una hiperbola porque cerca del cero se comporta asintoticamente.
+Primero transforme los datos de N-remaining como 1/y, pero no se linealizaron ahora en lugar de decrecer ahora aumentaba. Entonces transfome y aplicando logaritmo y ya se ven la gráfica de los datos como una línea recta.
+Leo los datos del archivo creado:
+time1 = np.array([100.0])
+log_Nqueda = np.array([100.0])
+f4 = open ('transform_radioctive_decay.txt', 'r')
+for line in f4:
+    line = line.strip()
+    columns = line.split()
+    j = columns[0]
+    #print j
+    k = columns[1]
+    if j != 'tiempo':
+        #print bandera1
+        time1 = np.insert(time1, len(time1), float(j))
+        log_Nqueda = np.insert(log_Nqueda, len(log_Nqueda), float(k))
+time1 = time1[1:17]
+log_Nqueda = log_Nqueda[1:17]
+print time1, log_Nqueda
+posterior cierro el archivo
+f4.close()
+Ya procedo hacer la regresion y las graficas y la prueba con alpha:
+interact(plotGuess, x=fixed(time1), y=fixed(log_Nqueda), interceptor=(0,5,0.02), pendiente=(-.6,0, 0.02));
+Tuve que aumentar el Numero de iteraciones para poder conseguir una mejor aproximacion al comportamiento:
+X=time1
+Y = log_Nqueda
+r = RegresionLineal(alpha=0.025, max_iters=1000000, tols=0.0000001)
+r.gradientDescent(X, Y)
+
+La función convergió con beta: [ 2.28933503 -0.31594138] en la iteración 844
+Y los valores de los coeficientes para los datos transformados, para la mejor estimación son simale a los encontrados probando con distintas algas y distinto Número de iteraciones.
+intercepto = 2.17, pendiente:-0.30.
+Ahora que significan los valores de los coeficientes de la regresión en el espacio inicial:
+para el caso de la beta0, es facil obtenerla exp(2.17) = 8.75, que supongo que quiere decir que es la cantidad inicial de disminución de peso atómico en la primer lapso de vida media del elemento químico; y beta1 o pendiente pues no puedo despejar, pero supongo que es la tasa a la que va seguir emitiendo energia y disminuyendo el número atómico (elemento químico) por cada siguiente lapso de vida media transcurrido.
