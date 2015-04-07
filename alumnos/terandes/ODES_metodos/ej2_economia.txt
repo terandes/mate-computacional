@@ -1,0 +1,45 @@
+ Usando como ejemplos lo visto en clase para los ejemplos de caida libre y del pendulo se escriben los siguientes subcodigos para graficar la tasa de extracción y el costo. 
+def Demanda(estado, tiempo):
+    y0 = estado[1]
+    y1 = estado[0]*(1-estado[1])
+    return np.array([y0,y1])
+donde el estado[0] es (1/alfa)*Demanda
+y el estado[1] es la extraccion
+ahora se resuelve el sistema de ecuaciones diferenciales mediante el método de Runge-Kutta de 4to orden:
+def demanda_rk4(y, tiempo, dt):
+    for j in range(N-1):
+        y[j+1] = RK4(y[j], tiempo[j], dt, Demanda)
+
+    extraccion = np.array([y[j,1] for j in range(N)])
+    demanda = np.array([y[j,0] for j in range(N)])
+
+    #costo = (psi/alfa)*Ademanda/extraccion
+    return extraccion, demanda.
+Posterior se define el subcodigo para poder utilizar el widget para probar con distintos valores de alfa y psi:
+def plotExt_Costo(alfa, psi, t, extraccion, qdemanda):
+    
+    R = alfa*qdemanda*(1-extraccion)
+    costo = (psi*alfa)*qdemanda/R
+    plt.figure(1, figsize=(8,6))
+    plt.plot(tiempo, R, label= tasa de Extraccion)
+    plt.plot(tiempo, costo, label=Costo)
+    plt.xlabel(rtiempo)
+    plt.ylabel(rR, Costo)
+    plt.legend(loc=best)
+    
+
+interact(plotExt_Costo, alfa=3.5, psi=0.01, t=fixed(tiempo), extraccion=fixed(extraccion1), qdemanda=fixed(demanda1))
+Out[934]: <function __main__.plotExt_Costo>
+Posterior se resuelve el problema con el codigo de Python Odeint:
+y_ini=np.array([0.1, 0.1])
+Py_sol_pba = odeint(func=Demanda, y0=y_ini, t=tiempo)
+
+
+yExtraccion2=Py_sol_pba[:,1]
+yDemanda2=Py_sol_pba[:,0]
+
+
+interact(plotExt_Costo, alfa=3.5, psi=0.01, t=fixed(tiempo), extraccion=fixed(yExtraccion2), qdemanda=fixed(yDemanda2))
+Out[937]: <function __main__.plotExt_Costo>
+Y los gráficos obtenidos se ven iguales. Por lo cual se podría suponer que el método de Python (odeint) utiliza la aproximación de Runge-kutta de 4to orden.
+Ahora observando las gráficas y las ecuaciones del problema se observa que la tasa de extracción (R) aumenta cuando la demanda es mucha y la dificultad de extracción (W) no es tan grande, pero se invierte el proceso (es decir la tasa de extracción disminuye) cuando la demanda disminuye y la dificultad de extracción aumenta. Y el costo aumenta de forma exponecial con respecto al tiempo. En un principio no hay un incremento del costo del recurso con el tiempo, hasta aproximadamente 3 unidades de tiempo. Si psi aumenta el costo del recurso no se comportara tan asintoticamente en las primeras unidades de tiempo. y la curva de la tasa de extraccion se aplana conforme alfa disminuye.
