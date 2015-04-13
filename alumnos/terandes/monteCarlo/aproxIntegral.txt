@@ -1,0 +1,25 @@
+ def int_fun(x):
+    return (x**3/3.0)-4*x*np.cos(x) + 4*np.sin(x)
+
+
+def funcion(x):
+    return (x**2 + 4*x*np.sin(x))
+
+
+a = 2
+b = 5*np.pi
+
+N = 10000
+
+X = np.random.uniform(low=a, high=b, size = N)
+Y = funcion(X)
+
+I_estimado = (b-a)*np.sum(Y) / N;
+
+I_exacto = int_fun(b) - int_fun(a)
+error = abs(I_estimado-I_exacto)
+print Estimación = , I_estimado, Exacto = , I_exacto
+print error
+
+Estimación =  1336.82824916 Exacto =  1345.12701702
+8.29876785875
